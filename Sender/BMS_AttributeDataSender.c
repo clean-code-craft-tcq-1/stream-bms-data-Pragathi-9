@@ -8,10 +8,10 @@ OperationMode BMS_Readfromdatafile()
  OperationMode ReadStatus= Failure;
 
   BMS_datafile=fopen("BMS_attributelog.txt", "r");
-  if (BMS_datafile==NULL)
+  	if (BMS_datafile==NULL)
 	{
 		printf("File open attempt failed\n");
-		ReadStatus = Failure;
+		
 	}
 	
 	else
@@ -45,10 +45,6 @@ OperationMode BMS_WriteToConsole(DataTransmitMode UserTransmitRequest)
 			printf("%f\t %f", Temperature[ArrayIndex],ChargeRate[ArrayIndex]);
 		}
 		WriteStatus= Success;
-	}
-	else
-	{
-		WriteStatus= Failure;
 	}
 	
 	return WriteStatus;
