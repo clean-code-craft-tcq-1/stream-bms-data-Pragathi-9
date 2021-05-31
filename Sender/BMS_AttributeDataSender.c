@@ -1,5 +1,6 @@
 
 #include <stdio.h>
+#include <stdlib.h>
 #include "BMS_AttributeDataSender.h"
 
 extern int BufferArraysize;
