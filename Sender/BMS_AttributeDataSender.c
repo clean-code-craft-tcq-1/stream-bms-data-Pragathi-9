@@ -23,6 +23,7 @@ OperationMode BMS_Readfromdatafile()
 			line=fscanf(BMS_datafile,"%f %f",&Temperature[Index],&ChargeRate[Index]);
 			Index++;
 		}
+		BufferArraysize=Index;
 		ReadStatus= Success;
 	}
 	
@@ -30,14 +31,14 @@ OperationMode BMS_Readfromdatafile()
 	return ReadStatus;
 }
 
-OperationMode BMS_WriteToConsole()
+OperationMode BMS_WriteToConsole(DataTransmitMode UserTransmitRequest)
 {
 	OperationMode WriteStatus=Failure;
-	
-	if (BMS_Readfromdatafile)
+	OperationMode BufferWriteStatus=BMS_Readfromdatafile();
+	if (BufferWriteStatus && UserTransmitRequest)
 	{
 		printf("BMS Temperature \t BMS Charge Rate");
-		for(int ArrayIndex=0; ArrayIndex< Index; ArrayIndex++)
+		for(int ArrayIndex=0; ArrayIndex < BufferArraysize; ArrayIndex++)
 		{
 			printf("%f\t %f", Temperature[ArrayIndex],ChargeRate[ArrayIndex]);
 		}
