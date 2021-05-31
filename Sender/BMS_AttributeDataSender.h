@@ -5,6 +5,11 @@ typedef enum {
   Success
 } OperationMode;
 
+typedef enum {
+  SendData,
+  StopData
+} DataTransmitMode;
+
 extern float Temperature[MAX_READINGS];
 extern float ChargeRate[MAX_READINGS];
 
