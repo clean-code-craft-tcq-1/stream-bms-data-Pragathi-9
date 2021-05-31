@@ -10,8 +10,10 @@ typedef enum {
   SendData 
 } DataTransmitMode;
 
+
+
 extern float Temperature[MAX_READINGS];
 extern float ChargeRate[MAX_READINGS];
 
 OperationMode BMS_Readfromdatafile();
-OperationMode BMS_WriteToConsole();
+OperationMode BMS_WriteToConsole(DataTransmitMode UserTransmitRequest);
