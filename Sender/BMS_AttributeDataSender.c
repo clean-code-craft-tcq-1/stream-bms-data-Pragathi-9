@@ -3,10 +3,7 @@
 #include <stdlib.h>
 #include "BMS_AttributeDataSender.h"
 
-extern int BufferArraysize;
-extern float Temperature[MAX_READINGS];
-extern float ChargeRate[MAX_READINGS];
-OperationMode ReadStatus, WriteStatus;
+
 OperationMode BMS_Readfromdatafile()
 {
   FILE *BMS_datafile;
