@@ -5,7 +5,7 @@ OperationMode BMS_Readfromdatafile()
 {
   FILE *BMS_datafile;
   int line=1;
-  enum OperationMode Status;
+  enum OperationMode ReadStatus;
 
   BMS_datafile=fopen("BMS_attributelog.txt", "r");
   if (BMS_datafile==NULL)
