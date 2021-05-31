@@ -36,7 +36,8 @@ OperationMode BMS_WriteToConsole(DataTransmitMode UserTransmitRequest)
 {
 	OperationMode WriteStatus=Failure;
 	OperationMode BufferWriteStatus=BMS_Readfromdatafile();
-	if (BufferWriteStatus)
+	int ActivateWriteToConsole= BufferWriteStatus && UserTransmitRequest;
+	if (ActivateWriteToConsole)
 	{
 		printf("BMS Temperature \t BMS Charge Rate");
 		for(int ArrayIndex=0; ArrayIndex < BufferArraysize; ArrayIndex++)
