@@ -6,8 +6,8 @@ typedef enum {
 } OperationMode;
 
 typedef enum {
-  SendData,
-  StopData
+  StopData,
+  SendData 
 } DataTransmitMode;
 
 extern float Temperature[MAX_READINGS];
