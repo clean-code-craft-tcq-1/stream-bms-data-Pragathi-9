@@ -11,7 +11,7 @@ TEST_CASE("To check if file was successfully opened to read")
 
 TEST_CASE("To check data is printed on the console") 
 {
-  DataTransmitMode UserRequest=1;
+  DataTransmitMode UserRequest=SendData;
   REQUIRE(BMS_WriteToConsole(UserRequest)== Success);
   
 }
