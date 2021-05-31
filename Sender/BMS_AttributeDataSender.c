@@ -20,7 +20,7 @@ OperationMode BMS_Readfromdatafile()
 		int Index=0;
 		while(line != EOF)
 		{
-			line=fscanf(BMS_datafile,"%0.2f %0.2f",&Temperature[Index],&ChargeRate[Index]);
+			line=fscanf(BMS_datafile,"%f %f",&Temperature[Index],&ChargeRate[Index]);
 			Index++;
 		}
 		ReadStatus= Success;
@@ -37,9 +37,9 @@ OperationMode BMS_WriteToConsole()
 	if (BMS_Readfromdatafile)
 	{
 		printf("BMS Temperature \t BMS Charge Rate");
-		for(int ArrayIndex=0, ArrayIndex< Index; ArrayIndex++)
+		for(int ArrayIndex=0; ArrayIndex< Index; ArrayIndex++)
 		{
-			printf("%0.2f\t %0.2f", Temperature[ArrayIndex],ChargeRate[ArrayIndex]);
+			printf("%f\t %f", Temperature[ArrayIndex],ChargeRate[ArrayIndex]);
 		}
 		WriteStatus= Success;
 	}
