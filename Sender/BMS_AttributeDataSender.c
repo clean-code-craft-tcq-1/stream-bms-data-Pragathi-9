@@ -2,11 +2,13 @@
 #include <stdio.h>
 #include "BMS_AttributeDataSender.h"
 
+
+OperationMode ReadStatus, WriteStatus;
 OperationMode BMS_Readfromdatafile()
 {
   FILE *BMS_datafile;
   int line=1;
- OperationMode ReadStatus= Failure;
+ ReadStatus= Failure;
 
   BMS_datafile=fopen("BMS_attributelog.txt", "r");
   	if (BMS_datafile==NULL)
@@ -35,9 +37,8 @@ OperationMode BMS_Readfromdatafile()
 	
 OperationMode BMS_WriteToConsole(DataTransmitMode UserTransmitRequest)
 {
-	OperationMode WriteStatus=Failure;
-	OperationMode BufferWriteStatus=BMS_Readfromdatafile();
-	int ActivateWriteToConsole= BufferWriteStatus && UserTransmitRequest;
+	WriteStatus=Failure;
+	int ActivateWriteToConsole= ReadStatus && UserTransmitRequest;
 	if (ActivateWriteToConsole)
 	{
 		printf("BMS Temperature \t BMS Charge Rate");
