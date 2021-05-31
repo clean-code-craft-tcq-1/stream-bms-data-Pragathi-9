@@ -11,7 +11,7 @@ typedef enum {
 } DataTransmitMode;
 
 
-
+extern int BufferArraysize;
 extern float Temperature[MAX_READINGS];
 extern float ChargeRate[MAX_READINGS];
 
