@@ -10,7 +10,7 @@ OperationMode BMS_Readfromdatafile()
   int line=1;
  ReadStatus= Failure;
 
-  BMS_datafile=fopen("BMS_attributelog.txt", "r");
+  BMS_datafile=fopen("Sender/BMS_attributelog.txt", "r");
   	if (BMS_datafile==NULL)
 	{
 		printf("File open attempt failed\n");
@@ -52,5 +52,6 @@ OperationMode BMS_WriteToConsole(DataTransmitMode UserTransmitRequest)
 }
 int main()
 {
+ 
  return 0;
 }
