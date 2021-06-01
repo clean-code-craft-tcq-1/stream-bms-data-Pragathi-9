@@ -4,6 +4,7 @@
 #include <math.h>
 #include "BMS_AttributeDataSender.h"
 
+OperationMode ReadStatus, WriteStatus;
 
 OperationMode BMS_Readfromdatafile()
 {
