@@ -5,6 +5,9 @@
 #include "BMS_AttributeDataSender.h"
 
 OperationMode ReadStatus, WriteStatus;
+Temperature[Index]={};
+ChargeRate[Index]={};
+BufferArraysize=0;
 
 OperationMode BMS_Readfromdatafile()
 {
@@ -25,9 +28,6 @@ OperationMode BMS_Readfromdatafile()
 		float ReadTemperature=0,ReadChargeRate=0;
 		printf("File open attempt successful\n");
 		int Index=0;
-		Temperature[Index]={};
-		ChargeRate[Index]={};
-		BufferArraysize=0;
 		while(line != EOF)
 		{
 			line=fscanf(BMS_datafile,"%f %f",&ReadTemperature,&ReadChargeRate);
