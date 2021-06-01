@@ -54,8 +54,3 @@ OperationMode BMS_WriteToConsole(DataTransmitMode UserTransmitRequest)
 	
 	return WriteStatus;
 }
-int main()
-{
- 
- return 0;
-}
