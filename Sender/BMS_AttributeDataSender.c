@@ -19,11 +19,14 @@ OperationMode BMS_Readfromdatafile()
 	
 	else
 	{
+		float ReadTemperature=0,ReadChargeRate=0;
 		printf("File open attempt successful\n");
 		int Index=0;
 		while(line != EOF)
 		{
-			line=fscanf(BMS_datafile,"%f %f",&Temperature[Index],&ChargeRate[Index]);
+			line=fscanf(BMS_datafile,"%f %f",&ReadTemperature,&ReadChargeRate);
+			Temperature[Index]=ReadTemperature;
+			ChargeRate[Index]=ReadChargeRate;
 			Index++;
 		}
 		BufferArraysize=Index;
