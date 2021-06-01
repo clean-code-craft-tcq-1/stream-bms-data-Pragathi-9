@@ -15,8 +15,8 @@ typedef enum {
 
 extern OperationMode BMS_Readfromdatafile();
 extern OperationMode BMS_WriteToConsole(DataTransmitMode UserTransmitRequest);
-extern int BufferArraysize;
-extern float Temperature[MAX_READINGS];
-extern float ChargeRate[MAX_READINGS];
+int BufferArraysize=0;
+float Temperature[MAX_READINGS]={};
+float ChargeRate[MAX_READINGS]={};
 OperationMode ReadStatus, WriteStatus;
 
