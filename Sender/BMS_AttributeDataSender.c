@@ -1,14 +1,34 @@
-
+  
+/**********************************************
+Include header files
+***********************************************/
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 #include "BMS_AttributeDataSender.h"
-
+  
+/**********************************************
+Variable declaration
+***********************************************/
 OperationMode ReadStatus, WriteStatus;
 float Temperature[]={};
 float ChargeRate[]={};
 int BufferArraysize=0;
 
+/*********************************************
+Function definitions
+**********************************************/
+
+/********************************************************************************
+ * Function: BMS_Readfromdatafile
+ 
+ * Description: This function reads the BMS parameter readings from the suitable 
+   data log file and stores into a buffer
+   
+ * input: void
+ 
+ * returns: Read status is Success(True) if the data is successfully read from the file.
+ *********************************************************************************/
 OperationMode BMS_Readfromdatafile()
 {
   FILE *BMS_datafile;
@@ -43,16 +63,26 @@ OperationMode BMS_Readfromdatafile()
 	return ReadStatus;
 }
 
-	
+/***********************************************************************************************
+ * Function: BMS_WriteToConsole
+ 
+ * Description: This function reads the BMS parameter readings from the buffer 
+   and writes on to the Console window.
+   
+ * input: User request is input to the same. Unless user demands the start of 
+ 	  transmission, no data is written on to console
+	  
+ * returns: Write status is Success(True) if the data is successfully written to the console.
+ ***********************************************************************************************/	
 OperationMode BMS_WriteToConsole(DataTransmitMode UserTransmitRequest)
 {
 	WriteStatus=Failure;
 	if (UserTransmitRequest)
 	{
-		printf("BMS Temperature \t BMS Charge Rate\n");
+		printf("BMS:Temperature \t BMS: Charge Rate\n");
 		for(int ArrayIndex=0; ArrayIndex < BufferArraysize; ArrayIndex++)
 		{
-			printf("%f\t %f\n", Temperature[ArrayIndex],ChargeRate[ArrayIndex]);
+			printf("%f\t\t %f\n", Temperature[ArrayIndex],ChargeRate[ArrayIndex]);
 		}
 		WriteStatus= Success;
 	}
