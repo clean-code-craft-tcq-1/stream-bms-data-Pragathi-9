@@ -5,9 +5,9 @@
 #include "BMS_AttributeDataSender.h"
 
 OperationMode ReadStatus, WriteStatus;
-Temperature[Index]={};
-ChargeRate[Index]={};
-BufferArraysize=0;
+float Temperature[Index]={};
+float ChargeRate[Index]={};
+float BufferArraysize=0;
 
 OperationMode BMS_Readfromdatafile()
 {
