@@ -49,10 +49,10 @@ OperationMode BMS_WriteToConsole(DataTransmitMode UserTransmitRequest)
 	WriteStatus=Failure;
 	if (UserTransmitRequest)
 	{
-		printf("BMS Temperature \t BMS Charge Rate");
+		printf("BMS Temperature \t BMS Charge Rate\n");
 		for(int ArrayIndex=0; ArrayIndex < BufferArraysize; ArrayIndex++)
 		{
-			printf("%f\t %f", Temperature[ArrayIndex],ChargeRate[ArrayIndex]);
+			printf("%f\t %f\n", Temperature[ArrayIndex],ChargeRate[ArrayIndex]);
 		}
 		WriteStatus= Success;
 	}
