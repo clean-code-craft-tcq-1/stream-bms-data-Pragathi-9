@@ -1,3 +1,7 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
 #define MAX_READINGS 1024
 
 typedef enum {
