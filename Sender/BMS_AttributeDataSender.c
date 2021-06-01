@@ -11,7 +11,8 @@ OperationMode BMS_Readfromdatafile()
   FILE *BMS_datafile;
   int line=1;
  ReadStatus= Failure;
-
+ 
+	
   BMS_datafile=fopen("./Sender/BMS_attributelog.txt", "r");
   	if (BMS_datafile==NULL)
 	{
@@ -24,6 +25,9 @@ OperationMode BMS_Readfromdatafile()
 		float ReadTemperature=0,ReadChargeRate=0;
 		printf("File open attempt successful\n");
 		int Index=0;
+		Temperature[Index]={};
+		ChargeRate[Index]={};
+		BufferArraysize=0;
 		while(line != EOF)
 		{
 			line=fscanf(BMS_datafile,"%f %f",&ReadTemperature,&ReadChargeRate);
